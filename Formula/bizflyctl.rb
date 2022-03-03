@@ -8,7 +8,7 @@ lass Bizflyctl < Formula
   # depends_on "cmake" => :build
 
   def install
-    install.bin "bizfly"
+    bin.install "bizfly"
   end
 
   test do
