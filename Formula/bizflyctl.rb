@@ -9,6 +9,7 @@ class Bizflyctl < Formula
     bin.install "bizfly"
   end
 
+
   test do
     system "false"
   end
