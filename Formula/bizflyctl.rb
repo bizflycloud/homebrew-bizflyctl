@@ -5,11 +5,11 @@
 class Bizflyctl < Formula
   desc " Command Line for Bizfly Cloud."
   homepage "https://github.com/bizflycloud/bizflyctl"
-  version "0.2.12"
+  version "0.2.15"
 
   on_macos do
-    url "https://github.com/bizflycloud/bizflyctl/releases/download/v0.2.12/bizflyctl_Darwin_all.tar.gz"
-    sha256 "5a834d012c76dc6b06e9e56e7ac06ba0f6d180672e39a8d79731e87d97c68b49"
+    url "https://github.com/bizflycloud/bizflyctl/releases/download/v0.2.15/bizflyctl_Darwin_all.tar.gz"
+    sha256 "2b26fab6aff147b93f150274ada5fa22448357ccc8e4e834511482cdbe776249"
 
     def install
       bin.install "bizfly"
@@ -17,25 +17,25 @@ class Bizflyctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/bizflycloud/bizflyctl/releases/download/v0.2.12/bizflyctl_Linux_x86_64.tar.gz"
-      sha256 "3c5990aaf5d1d6bfadb648c611a3688daf8bf31765ca43dba4deeda96dff393e"
-
-      def install
-        bin.install "bizfly"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/bizflycloud/bizflyctl/releases/download/v0.2.12/bizflyctl_Linux_armv6.tar.gz"
-      sha256 "5013e95ec3b1e549286d0d2a5e0bebc8692a012c3f110d91332c7ccd71b4157c"
+      url "https://github.com/bizflycloud/bizflyctl/releases/download/v0.2.15/bizflyctl_Linux_armv6.tar.gz"
+      sha256 "195bdd7053192a7d4388576efdbc0b4bcc2fe173db56e4a48190b2e8b78ac165"
 
       def install
         bin.install "bizfly"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bizflycloud/bizflyctl/releases/download/v0.2.12/bizflyctl_Linux_arm64.tar.gz"
-      sha256 "c1061f30858c9a2c8107de60152d0f1ee0cac5994486a265c23079bbcf049fd1"
+      url "https://github.com/bizflycloud/bizflyctl/releases/download/v0.2.15/bizflyctl_Linux_arm64.tar.gz"
+      sha256 "27f29e83a567b746e59fff9efc0f824b61aaa57a5272f44c58a2185dac66ee4c"
+
+      def install
+        bin.install "bizfly"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/bizflycloud/bizflyctl/releases/download/v0.2.15/bizflyctl_Linux_x86_64.tar.gz"
+      sha256 "f9440f406d16517d6c093b0de412ecfe51d7b05998180ce5e9c15efc553c8a90"
 
       def install
         bin.install "bizfly"
